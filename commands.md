@@ -1,9 +1,9 @@
-# Guia de comandos do projeto: Estilização/Sintaxe e  TypeScript
+# Guia de comandos do projeto: Estilização/Sintaxe e TypeScript
 
 ## Instalação do Node.js
 
 ```bash
-# Iniciando projeto Node.JS    
+# Iniciando projeto Node.JS
 npm init
 ```
 
@@ -57,9 +57,7 @@ npm pkg set scripts.prepare="husky install"
 npm run prepare
 
 # Configuração do arquivo .husky/pre-commit
-'#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-npm run fix'
+npm run fix
 ```
 
 ## Scripts padrão
