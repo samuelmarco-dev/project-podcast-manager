@@ -1,0 +1,38 @@
+{
+    "name": "project-podcast-manager",
+    "version": "1.0.0",
+    "description": "Podcast Management API in Typescript",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "dist": "tsup src",
+        "fix": "prettier . --write && eslint --fix .",
+        "prepare": "husky install",
+        "start:dev": "tsx --env-file=.env.dev src/index.ts",
+        "start:watch": "tsx watch --env-file=.env.dev src/index.ts",
+        "start:dist": "npm run dist && node dist/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/samuelmarco-dev/project-podcast-manager.git"
+    },
+    "author": "Samuel Marco",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/samuelmarco-dev/project-podcast-manager/issues"
+    },
+    "homepage": "https://github.com/samuelmarco-dev/project-podcast-manager#readme",
+    "devDependencies": {
+        "@types/node": "^20.14.12",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "husky": "^9.1.1",
+        "prettier": "^3.3.3",
+        "tsup": "^8.2.2",
+        "tsx": "^4.16.2",
+        "typescript": "^5.5.4",
+        "@typescript-eslint/eslint-plugin": "^7.17.0",
+        "@typescript-eslint/parser": "^7.17.0"
+    }
+}
