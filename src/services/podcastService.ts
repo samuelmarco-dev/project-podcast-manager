@@ -4,7 +4,7 @@ import { StatusCode } from '../utils/statusCode.js';
 
 async function listEpisodes(): Promise<FilterEpisode> {
     const data = await dataEpisodes();
-    
+
     return {
         status: data.length ? StatusCode.OK : StatusCode.NO_CONTENT,
         body: data,
