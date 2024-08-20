@@ -8,10 +8,11 @@ async function listEpisodes(): Promise<Episode[]> {
 }
 
 async function filterEpisodes(podcastName: string): Promise<FilterEpisode> {
-    if (!podcastName) return {
-        status: StatusCode.NO_CONTENT,
-        data: []
-    };
+    if (!podcastName)
+        return {
+            status: StatusCode.NO_CONTENT,
+            data: [],
+        };
     else {
         const data = await dataEpisodes();
         const lowerCaseName = podcastName.toLocaleLowerCase();
@@ -20,7 +21,7 @@ async function filterEpisodes(podcastName: string): Promise<FilterEpisode> {
             status: StatusCode.OK,
             data: data.filter((episode) =>
                 episode.podcast.toLocaleLowerCase().includes(lowerCaseName)
-            )
+            ),
         };
     }
 }
