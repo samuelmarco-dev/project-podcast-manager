@@ -17,8 +17,8 @@ async function getFilterEpisodes(
 ) {
     const content = await filterEpisodes(queryString.split('=')[1] || '');
 
-    res.writeHead(StatusCode.OK, { 'Content-Type': ContentType.JSON });
-    res.end(JSON.stringify(content));
+    res.writeHead(content.status, { 'Content-Type': ContentType.JSON });
+    res.end(JSON.stringify(content.data));
 }
 
 export { getListEpisodes, getFilterEpisodes };
