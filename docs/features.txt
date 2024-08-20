@@ -1,0 +1,36 @@
+# FUNCIONALIDADES DO PROJETO
+
+## Objeto Principal da Aplicação
+- Cada episódio deve conter as seguintes informações:
+  - Nome do podcast (host)
+  - Nome do episódio
+  - Duração do episódio
+  - Data de publicação
+  - URL do episódio
+  - URL da imagem do episódio
+----------------------------------------------------------
+
+## TODO
+1- Listar os episódios de podcasts em sessões de categorias
+  - Categorias: saúde, mentalidade, humor, ciência
+
+2- Filtrar os epísódios por nome de podcast (Host)
+----------------------------------------------------------
+
+## API REST
+- Protocolo de comunicação: HTTP
+- Formato de resposta: JSON
+
+- Exemplo de objeto response:
+```json
+    {
+        "id": "1",
+        "podcast": "Podcast 1",
+        "name": "Episódio 1",
+        "duration": "00:00:00",
+        "url": "http://example.com/episode1",
+        "image": "http://example.com/episode1.jpg",
+        "published_at": "2021-01-01",
+        "categories": ["saúde", "mentalidade"]
+    }
+```
