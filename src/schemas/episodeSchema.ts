@@ -1,4 +1,4 @@
-interface episode {
+interface Episode {
     id: string;
     podcast: string;
     name: string;
@@ -9,4 +9,4 @@ interface episode {
     categories: string[];
 }
 
-export default episode;
+export default Episode;
