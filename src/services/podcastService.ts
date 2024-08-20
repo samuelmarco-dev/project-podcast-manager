@@ -16,12 +16,13 @@ async function filterEpisodes(podcastName: string): Promise<FilterEpisode> {
     else {
         const data = await dataEpisodes();
         const lowerCaseName = podcastName.toLocaleLowerCase();
+        const filteredPodcast = data.filter((episode) =>
+            episode.podcast.toLocaleLowerCase().includes(lowerCaseName)
+        );
 
         return {
-            status: StatusCode.OK,
-            data: data.filter((episode) =>
-                episode.podcast.toLocaleLowerCase().includes(lowerCaseName)
-            ),
+            status: filteredPodcast.length ? StatusCode.OK : StatusCode.NO_CONTENT,
+            data: filteredPodcast,
         };
     }
 }
