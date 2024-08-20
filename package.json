@@ -3,14 +3,14 @@
     "version": "1.0.0",
     "description": "Podcast Management API in Typescript",
     "type": "module",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
         "dist": "tsup src",
         "fix": "prettier . --write && eslint --fix .",
         "prepare": "husky install",
-        "start:dev": "tsx --env-file=.env.dev src/index.ts",
-        "start:watch": "tsx watch --env-file=.env.dev src/index.ts",
-        "start:dist": "npm run dist && node dist/index.js",
+        "start:dev": "tsx --env-file=.env.dev src/server.ts",
+        "start:watch": "tsx watch --env-file=.env.dev src/server.ts",
+        "start:dist": "npm run dist && node --env-file=.env.dev dist/server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
