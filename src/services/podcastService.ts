@@ -1,17 +1,21 @@
 import { dataEpisodes } from '../repositories/podcastRepository.js';
-import Episode from '../schemas/episodeSchema.js';
 import FilterEpisode from '../schemas/filterEpisodeSchema.js';
 import { StatusCode } from '../utils/statusCode.js';
 
-async function listEpisodes(): Promise<Episode[]> {
-    return await dataEpisodes();
+async function listEpisodes(): Promise<FilterEpisode> {
+    const data = await dataEpisodes();
+    
+    return {
+        status: data.length ? StatusCode.OK : StatusCode.NO_CONTENT,
+        body: data,
+    };
 }
 
 async function filterEpisodes(podcastName: string): Promise<FilterEpisode> {
     if (!podcastName)
         return {
             status: StatusCode.NO_CONTENT,
-            data: [],
+            body: [],
         };
     else {
         const data = await dataEpisodes();
@@ -24,7 +28,7 @@ async function filterEpisodes(podcastName: string): Promise<FilterEpisode> {
             status: filteredPodcast.length
                 ? StatusCode.OK
                 : StatusCode.NO_CONTENT,
-            data: filteredPodcast,
+            body: filteredPodcast,
         };
     }
 }

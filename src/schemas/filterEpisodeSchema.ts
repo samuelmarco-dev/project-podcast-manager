@@ -1,9 +1,10 @@
 import { StatusCode } from '../utils/statusCode.js';
 import Episode from './episodeSchema.js';
 
+// DTO
 interface FilterEpisode {
     status: StatusCode;
-    data: Episode[];
+    body: Episode[];
 }
 
 export default FilterEpisode;
