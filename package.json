@@ -2,7 +2,6 @@
     "name": "project-podcast-manager",
     "version": "1.0.0",
     "description": "Podcast Management API in Typescript",
-    "type": "module",
     "main": "server.js",
     "scripts": {
         "dist": "tsup src",
