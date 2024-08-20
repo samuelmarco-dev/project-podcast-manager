@@ -1,14 +1,7 @@
-import { createServer, IncomingMessage, ServerResponse } from 'http';
-import { getListEpisodes } from './controllers/podcastController.js';
+import { createServer } from 'http';
+import { app } from './app.js';
 
-const server = createServer(
-    async (req: IncomingMessage, res: ServerResponse) => {
-        if (req.method === 'GET') {
-            await getListEpisodes(req, res);
-        }
-    }
-);
-
+const server = createServer(app);
 const defaultPort = 5000;
 const port = Number(process.env.PORT) || defaultPort;
 
