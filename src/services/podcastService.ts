@@ -21,7 +21,9 @@ async function filterEpisodes(podcastName: string): Promise<FilterEpisode> {
         );
 
         return {
-            status: filteredPodcast.length ? StatusCode.OK : StatusCode.NO_CONTENT,
+            status: filteredPodcast.length
+                ? StatusCode.OK
+                : StatusCode.NO_CONTENT,
             data: filteredPodcast,
         };
     }
